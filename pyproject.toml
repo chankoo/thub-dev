@@ -1,0 +1,8 @@
+[tool.poetry]
+name = "thub-dev"
+version = "0.0.0"
+description = ""
+authors = ["chankoo"]
+
+[tool.poetry.dependencies]
+python = "^3.11"

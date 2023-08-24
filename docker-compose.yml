@@ -1,0 +1,9 @@
+version: "3"
+services:
+  thub-dev:
+    build: .
+    command: ["poetry", "run", "python", "main.py"]
+    volumes:
+      - .:/thub-dev
+    environment:
+      PYTHONUNBUFFERED: "1"
