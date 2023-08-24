@@ -2,6 +2,7 @@ version: "3"
 services:
   thub-dev:
     build: .
+    container_name: thub-dev
     command: ["poetry", "run", "python", "main.py"]
     volumes:
       - .:/thub-dev

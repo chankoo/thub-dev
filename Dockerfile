@@ -13,6 +13,5 @@ RUN pip install poetry
 
 RUN poetry new thub-dev
 
-
 # Copy the rest of the application code
 COPY . /thub-dev/
