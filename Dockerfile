@@ -15,8 +15,7 @@ RUN export PATH="$HOME/.cargo/bin:$PATH"
 COPY pyproject.toml /thub-dev/
 
 # Install Poetry and project dependencies
-RUN pip install poetry
-#&& poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
+RUN pip install poetry && poetry config virtualenvs.create false
 
 RUN poetry new thub-dev
 
