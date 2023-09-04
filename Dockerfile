@@ -11,6 +11,12 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 # Run the logic from the script to modify PATH
 RUN export PATH="$HOME/.cargo/bin:$PATH"
 
+# setup for opencv
+RUN apt-get update
+RUN apt-get -y install libgl1-mesa-glx
+
+RUN pip install camelot-py[cv]
+
 # Copy the pyproject.toml and poetry.lock files
 COPY pyproject.toml /thub-dev/
 
