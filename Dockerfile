@@ -13,8 +13,7 @@ RUN export PATH="$HOME/.cargo/bin:$PATH"
 
 # setup for opencv
 RUN apt-get update
-RUN apt-get -y install libgl1-mesa-glx
-
+RUN apt-get -y install libgl1-mesa-glx ghostscript python3-tk
 RUN pip install camelot-py[cv]
 
 # Copy the pyproject.toml and poetry.lock files
