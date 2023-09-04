@@ -16,6 +16,10 @@ RUN apt-get update
 RUN apt-get -y install libgl1-mesa-glx ghostscript python3-tk
 RUN pip install camelot-py[cv]
 
+RUN apt-get -y install gcc-11 g++-11
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60 --slave /usr/bin/g++ g++ /usr/bin/g++-11
+RUN pip install llama-cpp-python
+
 # Copy the pyproject.toml and poetry.lock files
 COPY pyproject.toml /thub-dev/
 
