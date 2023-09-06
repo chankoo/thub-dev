@@ -4,6 +4,11 @@ FROM python:3.11
 # Set the working directory inside the container
 WORKDIR /thub-dev
 
+RUN apt-get update
+
+# java for tabula-py
+RUN apt-get install default-jre
+
 # rustup shell setup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Set the initial PATH value (can be adjusted based on your requirements)
@@ -12,7 +17,6 @@ ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 RUN export PATH="$HOME/.cargo/bin:$PATH"
 
 # setup for opencv
-RUN apt-get update
 RUN apt-get -y install libgl1-mesa-glx ghostscript python3-tk
 RUN pip install camelot-py[cv]
 
